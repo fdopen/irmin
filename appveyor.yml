@@ -6,6 +6,7 @@ environment:
     FORK_USER: fdopen
     FORK_BRANCH: msvc-powershell
     CYG_ROOT: C:\cygwin64
+    OPAMJOBS: 3
     PINS: "irmin.dev:. irmin-http.dev:. irmin-git.dev:. irmin-mirage.dev:. irmin-unix.dev:."
     ALCOTEST_SHOW_ERRORS: "true"
   matrix:
