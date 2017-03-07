@@ -5,6 +5,7 @@ environment:
   global:
     FORK_USER: fdopen
     FORK_BRANCH: msvc-powershell
+    CYG_ROOT: C:\cygwin64
     PINS: "irmin.dev:. irmin-http.dev:. irmin-git.dev:. irmin-mirage.dev:. irmin-unix.dev:."
     ALCOTEST_SHOW_ERRORS: "true"
   matrix:
@@ -15,4 +16,4 @@ install:
   - ps: iex ((new-object net.webclient).DownloadString("https://raw.githubusercontent.com/$env:FORK_USER/ocaml-ci-scripts/$env:FORK_BRANCH/appveyor-install.ps1"))
 
 build_script:
-  - C:\cygwin64\bin\bash.exe -l %APPVEYOR_BUILD_FOLDER%\appveyor-opam.sh
+  - call %CYG_ROOT%\bin\bash.exe -l %APPVEYOR_BUILD_FOLDER%\appveyor-opam.sh
